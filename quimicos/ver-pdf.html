@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#00467F" />
+  <title>Hoja de Seguridad · COFCA</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="viewer-header">
+    <a href="hoja-seguridad.html" class="back-btn" aria-label="Volver a la lista">‹</a>
+    <div class="viewer-title" id="titulo">Hoja de Seguridad</div>
+    <div class="viewer-actions">
+      <a id="abrir" href="#" target="_blank" rel="noopener" title="Abrir en pestaña nueva">↗</a>
+      <a id="descargar" href="#" download title="Descargar PDF">⬇</a>
+    </div>
+  </header>
+
+  <main class="viewer-content">
+    <iframe id="pdf" class="pdf-frame" title="PDF"></iframe>
+
+    <div id="pdf-fallback" class="fallback" style="display:none;">
+      <p>No se pudo cargar el PDF en el navegador.<br />
+      Toca el botón para abrirlo o descargarlo.</p>
+      <a id="fallback-btn" class="btn" href="#" target="_blank" rel="noopener">Abrir PDF</a>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const archivo = params.get("f");
+    const titulo  = params.get("t") || "Hoja de Seguridad";
+
+    if (archivo) {
+      const ruta = `../archivos/quimicos/${archivo}`;
+      document.getElementById("titulo").textContent = titulo;
+      document.title = `${titulo} · COFCA`;
+      document.getElementById("pdf").src = ruta;
+      document.getElementById("abrir").href = ruta;
+      document.getElementById("descargar").href = ruta;
+      document.getElementById("fallback-btn").href = ruta;
+
+      // Si el iframe no carga el PDF (algunos móviles), mostramos fallback al rato.
+      setTimeout(() => {
+        const f = document.getElementById("pdf");
+        try {
+          if (!f.contentDocument && !f.contentWindow) {
+            document.getElementById("pdf-fallback").style.display = "block";
+          }
+        } catch (_) { /* cross-origin, asumimos OK */ }
+      }, 2500);
+    } else {
+      document.getElementById("pdf").style.display = "none";
+      document.getElementById("pdf-fallback").style.display = "block";
+      document.getElementById("pdf-fallback").querySelector("p").innerHTML =
+        "No se especificó archivo.<br />Vuelve a la lista y selecciona un producto.";
+      document.getElementById("fallback-btn").href = "hoja-seguridad.html";
+      document.getElementById("fallback-btn").textContent = "Volver a la lista";
+      document.getElementById("fallback-btn").removeAttribute("target");
+    }
+  </script>
+</body>
+</html>

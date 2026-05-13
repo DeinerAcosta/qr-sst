@@ -1,0 +1,25 @@
+# Archivos temporales del sistema
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editores y herramientas locales
+.vscode/
+.idea/
+.claude/
+*.swp
+*~
+
+# Python (por si usan venv para el script de QR)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Carpetas temporales
+_*_temp/
+
+# Archivos generados (los QR se regeneran con el script)
+# Coméntalo si prefieres versionar los QR generados.
+# qr-codes/*.png
+# qr-codes/*.svg
