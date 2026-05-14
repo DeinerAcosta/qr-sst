@@ -29,9 +29,9 @@ const CATEGORIA = {
 };
 
 const PRODUCTOS = [
-  { id: "aire-medicinal",     nombre: "Aire Medicinal Sintético Comprimido", pdf: "aire-medicinal.pdf",     video: "", resumen: "" },
-  { id: "dioxido-de-carbono", nombre: "Dióxido de Carbono Medicinal",        pdf: "dioxido-de-carbono.pdf", video: "", resumen: "" },
-  { id: "oxido-nitroso",      nombre: "Óxido Nitroso",                       pdf: "oxido-nitroso.pdf",      video: "", resumen: "" },
-  { id: "oxigeno-liquido",    nombre: "Oxígeno Líquido (LOX)",               pdf: "oxigeno-liquido.pdf",    video: "", resumen: "" },
-  { id: "oxigeno-medicinal",  nombre: "Oxígeno Medicinal (GOX)",             pdf: "oxigeno-medicinal.pdf",  video: "", resumen: "" },
+  { id: "aire-medicinal",     nombre: "Aire Medicinal (Comprimido y Sintético)", pdf: "aire-medicinal.pdf",     video: "", resumen: "" },
+  { id: "dioxido-de-carbono", nombre: "Dióxido de Carbono (Dioxicarbomed)",      pdf: "dioxido-de-carbono.pdf", video: "", resumen: "" },
+  { id: "oxido-nitroso",      nombre: "Óxido Nitroso",                           pdf: "oxido-nitroso.pdf",      video: "", resumen: "" },
+  { id: "oxigeno-liquido",    nombre: "Oxígeno Líquido (LOX)",                   pdf: "oxigeno-liquido.pdf",    video: "", resumen: "" },
+  { id: "oxigeno-medicinal",  nombre: "Oxígeno Medicinal",                       pdf: "oxigeno-medicinal.pdf",  video: "", resumen: "" },
 ];
