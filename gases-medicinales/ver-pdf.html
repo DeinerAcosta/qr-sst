@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="viewer-header">
-    <a href="hoja-seguridad.html" class="back-btn" aria-label="Volver a la lista">‹</a>
+    <a id="volver" href="index.html" class="back-btn" aria-label="Volver">‹</a>
     <div class="viewer-title" id="titulo">Hoja de Seguridad</div>
     <div class="viewer-actions">
       <a id="abrir" href="#" target="_blank" rel="noopener" title="Abrir en pestaña nueva">↗</a>
@@ -27,15 +27,16 @@
     </div>
   </main>
 
+  <script src="datos.js"></script>
   <script>
-    const params = new URLSearchParams(location.search);
-    const archivo = params.get("f");
-    const titulo  = params.get("t") || "Hoja de Seguridad";
+    const id = new URLSearchParams(location.search).get("id");
+    const producto = PRODUCTOS.find(p => p.id === id);
 
-    if (archivo) {
-      const ruta = `../archivos/gases-medicinales/${archivo}`;
-      document.getElementById("titulo").textContent = titulo;
-      document.title = `${titulo} · COFCA`;
+    if (producto) {
+      const ruta = `../archivos/gases-medicinales/${producto.pdf}`;
+      document.getElementById("titulo").textContent = producto.nombre;
+      document.title = `${producto.nombre} · COFCA`;
+      document.getElementById("volver").href = `producto.html?id=${encodeURIComponent(producto.id)}`;
       document.getElementById("pdf").src = ruta;
       document.getElementById("abrir").href = ruta;
       document.getElementById("descargar").href = ruta;
@@ -53,8 +54,8 @@
       document.getElementById("pdf").style.display = "none";
       document.getElementById("pdf-fallback").style.display = "block";
       document.getElementById("pdf-fallback").querySelector("p").innerHTML =
-        "No se especificó archivo.<br />Vuelve a la lista y selecciona un gas.";
-      document.getElementById("fallback-btn").href = "hoja-seguridad.html";
+        "Gas no encontrado.<br />Vuelve a la lista y selecciona un gas.";
+      document.getElementById("fallback-btn").href = "index.html";
       document.getElementById("fallback-btn").textContent = "Volver a la lista";
       document.getElementById("fallback-btn").removeAttribute("target");
     }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#00467F" />
+  <title>Producto · SST COFCA</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="brand-mark">🧪</span>
+      <span>COFCA · Productos Químicos</span>
+    </div>
+    <h1 class="title" id="nombre">Producto</h1>
+    <p class="subtitle">Información de Seguridad y Salud en el Trabajo</p>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <p class="section-title">Recursos disponibles</p>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="section">
+      <a href="index.html" class="card" style="background:transparent;border:1px dashed var(--cofca-border);box-shadow:none;">
+        <span class="card-icon" style="background:transparent;color:var(--cofca-muted);box-shadow:none;font-size:22px;">‹</span>
+        <div class="card-body">
+          <div class="card-title" style="color:var(--cofca-muted);">Volver a la lista de productos</div>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>COFCA</strong> · Sistema de Gestión SST<br />
+    Área de Productos Químicos
+  </footer>
+
+  <script src="datos.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get("id");
+    const producto = PRODUCTOS.find(p => p.id === id);
+    const cards = document.getElementById("cards");
+
+    if (!producto) {
+      document.getElementById("nombre").textContent = "Producto no encontrado";
+      cards.innerHTML = `
+        <a href="index.html" class="card">
+          <span class="card-icon">↩</span>
+          <div class="card-body">
+            <div class="card-title">Volver a la lista</div>
+            <div class="card-desc">El producto solicitado no existe</div>
+          </div>
+          <span class="card-arrow">›</span>
+        </a>`;
+    } else {
+      document.getElementById("nombre").textContent = producto.nombre;
+      document.title = `${producto.nombre} · SST COFCA`;
+
+      const tieneVideo   = producto.video && producto.video.trim() !== "";
+      const tieneResumen = producto.resumen && producto.resumen.trim() !== "";
+
+      cards.innerHTML = `
+        <a href="ver-pdf.html?id=${encodeURIComponent(producto.id)}" class="card">
+          <span class="card-icon">📄</span>
+          <div class="card-body">
+            <div class="card-title">Hoja de Seguridad</div>
+            <div class="card-desc">Ficha técnica oficial (SDS) en PDF</div>
+          </div>
+          <span class="card-arrow">›</span>
+        </a>
+
+        <a href="resumen.html?id=${encodeURIComponent(producto.id)}" class="card">
+          <span class="card-icon accent">📋</span>
+          <div class="card-body">
+            <div class="card-title">Resumen</div>
+            <div class="card-desc">${tieneResumen ? "Puntos clave y recomendaciones" : "En preparación"}</div>
+          </div>
+          <span class="card-arrow">›</span>
+        </a>
+
+        <a href="video.html?id=${encodeURIComponent(producto.id)}" class="card">
+          <span class="card-icon warn">🎥</span>
+          <div class="card-body">
+            <div class="card-title">Video</div>
+            <div class="card-desc">${tieneVideo ? "Capacitación visual sobre manejo seguro" : "En preparación"}</div>
+          </div>
+          <span class="card-arrow">›</span>
+        </a>
+      `;
+    }
+  </script>
+</body>
+</html>

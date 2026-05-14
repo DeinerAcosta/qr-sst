@@ -81,19 +81,19 @@ def generar_svg(nombre: str, url: str) -> Path:
 
 
 def main() -> None:
-    print("\n🔷 COFCA · Generador de QR para SST\n")
+    print("\n[COFCA] Generador de QR para SST\n")
     print(f"URL base: {BASE_URL}\n")
 
     for nombre, url in DESTINOS.items():
         png = generar_png(nombre, url)
         svg = generar_svg(nombre, url)
-        print(f"  ✓ {nombre}")
-        print(f"      URL: {url}")
-        print(f"      PNG: {png}")
-        print(f"      SVG: {svg}\n")
+        print(f"  [OK] {nombre}")
+        print(f"       URL: {url}")
+        print(f"       PNG: {png}")
+        print(f"       SVG: {svg}\n")
 
-    print("✅ Listo. Los QR están en la carpeta 'qr-codes/'.")
-    print("   Imprime el PNG (alta resolución) o usa el SVG para tamaños grandes.\n")
+    print("Listo. Los QR estan en la carpeta 'qr-codes/'.")
+    print("Imprime el PNG (alta resolucion) o usa el SVG para tamanos grandes.\n")
 
 
 if __name__ == "__main__":

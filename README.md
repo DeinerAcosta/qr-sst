@@ -2,7 +2,14 @@
 
 Sistema de visualización de Hojas de Seguridad mediante códigos QR para la **Clínica Oftalmológica del Caribe (COFCA)**.
 
-Cada QR abre una mini-página web con 3 accesos: **Hoja de Seguridad (PDF)**, **Resumen** y **Video** de capacitación.
+Hay **dos QR independientes**, uno por zona física:
+
+| QR | Zona | URL |
+|---|---|---|
+| Productos Químicos | Salón de productos químicos | https://deineracosta.github.io/qr-sst/quimicos/ |
+| Gases Medicinales | Zona de gases medicinales | https://deineracosta.github.io/qr-sst/gases-medicinales/ |
+
+Al escanear, el usuario ve la **lista de productos de esa zona**. Al tocar un producto accede a sus **3 recursos**: Hoja de Seguridad (PDF), Resumen y Video.
 
 ---
 
@@ -10,109 +17,101 @@ Cada QR abre una mini-página web con 3 accesos: **Hoja de Seguridad (PDF)**, **
 
 ```
 QR SST/
-├── index.html                      ← Pantalla principal (selector de categoría)
+├── index.html                      ← Selector de categoría (página de respaldo)
 ├── assets/
 │   └── style.css                   ← Estilos compartidos (branding COFCA)
 ├── quimicos/
-│   ├── index.html                  ← Landing Productos Químicos (3 botones)
-│   ├── hoja-seguridad.html         ← Lista buscable de los 32 productos
-│   ├── ver-pdf.html                ← Visor PDF genérico (?f=archivo&t=titulo)
-│   ├── resumen.html                ← Resumen formateado
-│   └── video.html                  ← Reproductor de video
+│   ├── datos.js                    ← ⭐ DATOS CENTRALIZADOS (productos, videos, resúmenes)
+│   ├── index.html                  ← Lista buscable de productos
+│   ├── producto.html               ← Pantalla del producto con sus 3 recursos
+│   ├── ver-pdf.html                ← Visor de la Hoja de Seguridad (PDF)
+│   ├── resumen.html                ← Resumen del producto
+│   └── video.html                  ← Video del producto
 ├── gases-medicinales/
-│   ├── index.html                  ← Landing Gases Medicinales (3 botones)
-│   ├── hoja-seguridad.html         ← Lista buscable de los 5 gases
-│   ├── ver-pdf.html                ← Visor PDF genérico
+│   ├── datos.js                    ← ⭐ DATOS CENTRALIZADOS
+│   ├── index.html
+│   ├── producto.html
+│   ├── ver-pdf.html
 │   ├── resumen.html
 │   └── video.html
-├── archivos/                       ← PDFs y videos
-│   ├── quimicos/                   ← 32 fichas de seguridad
-│   │   ├── 1-thinner.pdf
-│   │   ├── 2-vasrsol.pdf
-│   │   └── … (30 más)
-│   └── gases-medicinales/          ← 5 fichas de seguridad
-│       ├── aire-medicinal.pdf
-│       ├── dioxido-de-carbono.pdf
-│       ├── oxido-nitroso.pdf
-│       ├── oxigeno-liquido.pdf
-│       └── oxigeno-medicinal.pdf
+├── archivos/
+│   ├── quimicos/                   ← 35 fichas de seguridad (PDF)
+│   └── gases-medicinales/          ← 5 fichas de seguridad (PDF)
 ├── qr-codes/                       ← QR generados (PNG + SVG)
 ├── generar-qr.py                   ← Script para crear los QR
 └── README.md
 ```
 
+> **Todo se controla desde `datos.js`.** Cada categoría tiene uno. Las páginas HTML
+> son genéricas: leen `datos.js` y se arman solas. No necesitas tocar el HTML.
+
 ---
 
-## 🚀 Pasos para poner en marcha (de cero a producción)
+## ✏️ Cómo mantener el sitio (lo más importante)
 
-### 1. Archivos (ya cargados ✓)
+Todo el contenido vive en `quimicos/datos.js` y `gases-medicinales/datos.js`.
+Cada producto es un bloque así:
 
-- **32 hojas de productos químicos** en `archivos/quimicos/` ✓
-- **5 fichas de gases medicinales** en `archivos/gases-medicinales/` ✓
-
-Si necesitas **agregar un producto nuevo** más adelante:
-1. Pon el PDF en la carpeta correspondiente (nombre en minúsculas, sin espacios, ej: `33-producto-nuevo.pdf`).
-2. Abre `quimicos/hoja-seguridad.html` (o `gases-medicinales/hoja-seguridad.html`) y añade una línea al array `productos`:
-   ```js
-   ["33-producto-nuevo.pdf", "Producto Nuevo"],
-   ```
-
-Para los videos, hay dos opciones:
-  - **YouTube (recomendado):** edita los archivos `video.html` y reemplaza el bloque placeholder por:
-    ```html
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    ```
-    Donde `VIDEO_ID` es la parte después de `v=` en la URL de YouTube.
-  - **Archivo local:** pon el mp4 en `archivos/<categoría>/video.mp4` y reemplaza el bloque por:
-    ```html
-    <video controls playsinline preload="metadata">
-      <source src="../archivos/quimicos/video.mp4" type="video/mp4" />
-    </video>
-    ```
-
-### 2. Ajustar contenido de los resúmenes
-
-Edita `quimicos/resumen.html` y `gases-medicinales/resumen.html` con la información oficial de COFCA.
-
-### 3. Publicar en GitHub Pages
-
-> Tu cuenta: [github.com/DeinerAcosta](https://github.com/DeinerAcosta)
-
-```bash
-# Desde la carpeta del proyecto:
-git init
-git add .
-git commit -m "Sitio SST COFCA - inicial"
-git branch -M main
-git remote add origin https://github.com/DeinerAcosta/qr-sst.git
-git push -u origin main
+```js
+{ id: "32-jabon-liquido", nombre: "Jabón Líquido", pdf: "32-jabon-liquido.pdf", video: "", resumen: "" },
 ```
 
-Luego en GitHub: **Settings → Pages → Source: `main` / root → Save.**
+### Conectar el video de un producto
 
-A los pocos minutos tu sitio estará en:
-`https://deineracosta.github.io/qr-sst/`
+Edita el campo `video` de ese producto:
 
-### 4. Generar los códigos QR
+| Caso | Qué poner |
+|---|---|
+| Video en YouTube | `video: "youtube:CODIGO"` (el CODIGO es lo que va después de `v=` en la URL) |
+| URL completa de YouTube | `video: "https://www.youtube.com/watch?v=CODIGO"` (también funciona) |
+| Archivo MP4 | `video: "archivos/quimicos/videos/jabon-liquido.mp4"` |
+| Sin video todavía | `video: ""` → muestra "Video en preparación" |
+
+> Para MP4: crea la carpeta `archivos/quimicos/videos/` y pon ahí los videos.
+> ⚠️ GitHub limita archivos a 100 MB. Si un video pesa más, usa YouTube.
+
+### Escribir el resumen de un producto
+
+Edita el campo `resumen` con texto HTML:
+
+```js
+resumen: "<h3>Riesgos principales</h3><ul><li>Inflamable</li><li>Irritante</li></ul><p>Usar guantes y gafas.</p>"
+```
+
+Vacío (`resumen: ""`) muestra "Resumen en preparación".
+
+### Agregar un producto nuevo
+
+1. Pon el PDF en `archivos/quimicos/` (nombre en minúsculas, sin espacios).
+2. Agrega un bloque al final del arreglo `PRODUCTOS` en `datos.js`.
+3. Listo — la lista y el buscador se actualizan solos.
+
+---
+
+## 🚀 Despliegue (ya realizado ✓)
+
+- ✅ Repo en GitHub: [github.com/DeinerAcosta/qr-sst](https://github.com/DeinerAcosta/qr-sst)
+- ✅ GitHub Pages activo: https://deineracosta.github.io/qr-sst/
+- ✅ 40 hojas de seguridad cargadas (35 químicos + 5 gases)
+
+### Para subir cambios nuevos
 
 ```bash
-pip install "qrcode[pil]"
+git add .
+git commit -m "Descripción del cambio"
+git push
+```
+
+A los 1-2 minutos los cambios están en vivo.
+
+### Regenerar los códigos QR
+
+```bash
+python -m pip install "qrcode[pil]"
 python generar-qr.py
 ```
 
-Esto crea dentro de `qr-codes/`:
-- `qr-quimicos.png` y `qr-quimicos.svg`
-- `qr-gases.png` y `qr-gases.svg`
-
-> **Antes de ejecutar:** abre `generar-qr.py` y verifica que la variable `BASE_URL` coincida con la URL final donde quede publicado tu sitio.
-
-### 5. Imprimir y colocar
-
-- Usa el **PNG** para imprimir tamaño normal (carta, etiqueta, etc.).
-- Usa el **SVG** si vas a imprimir en gran formato (poster, valla) — no pierde calidad.
-- Recomendado: añade debajo del QR el nombre legible — *"Hoja de Seguridad · Productos Químicos"*.
+Crea en `qr-codes/`: `qr-quimicos.png/.svg` y `qr-gases.png/.svg`.
 
 ---
 
@@ -127,36 +126,27 @@ Colores corporativos definidos en `assets/style.css`:
 | `--cofca-accent`     | #00A19A  | Verde agua salud          |
 | `--cofca-bg`         | #F4F8FB  | Fondo general             |
 
-Si necesitas ajustar a la paleta exacta de COFCA, edita esas variables en `assets/style.css` — los cambios se aplican a todo el sitio.
-
 ---
 
 ## 🧪 Cómo probar localmente
 
-Abre `index.html` directamente en el navegador, o levanta un servidor local:
-
 ```bash
-# Python (incluido en Windows si tienes Python):
 python -m http.server 8000
 # Luego abre: http://localhost:8000
 ```
-
-> Algunos navegadores bloquean PDFs e iframes al abrir archivos sin servidor.
-> Para pruebas realistas, usa el servidor local.
 
 ---
 
 ## 📝 Tareas pendientes
 
-- [x] Cargar PDFs de químicos (32) ✓
+- [x] Cargar PDFs de químicos (35) ✓
 - [x] Cargar PDFs de gases medicinales (5) ✓
-- [ ] Reemplazar el bloque de video en `quimicos/video.html` con YouTube o mp4
-- [ ] Reemplazar el bloque de video en `gases-medicinales/video.html` con YouTube o mp4
-- [ ] Revisar / aprobar texto de los dos `resumen.html`
-- [ ] Verificar nombres legibles en las listas (`hoja-seguridad.html`) — algunos productos pueden tener nombre comercial distinto.
-- [ ] Subir el sitio a GitHub Pages
-- [ ] Confirmar URL final → actualizar `BASE_URL` en `generar-qr.py`
-- [ ] Generar QR y entregar al área correspondiente
+- [x] Reestructurar a navegación "producto primero" ✓
+- [x] Subir el sitio a GitHub Pages ✓
+- [x] Generar QR ✓
+- [ ] Conectar los videos de cada producto (campo `video` en `datos.js`)
+- [ ] Escribir los resúmenes de cada producto (campo `resumen` en `datos.js`)
+- [ ] Verificar nombres comerciales de los productos con el área SST
 
 ---
 

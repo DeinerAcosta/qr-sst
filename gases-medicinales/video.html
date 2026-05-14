@@ -4,43 +4,95 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#00467F" />
-  <title>Video - Gases Medicinales · COFCA</title>
+  <title>Video · SST COFCA</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
   <header class="viewer-header">
-    <a href="index.html" class="back-btn" aria-label="Volver">‹</a>
-    <div class="viewer-title">Video · Gases</div>
+    <a id="volver" href="index.html" class="back-btn" aria-label="Volver">‹</a>
+    <div class="viewer-title" id="titulo">Video</div>
   </header>
 
   <main class="viewer-content">
-    <!--
-      OPCIÓN A · Video alojado en YouTube (recomendado):
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-      OPCIÓN B · Archivo de video local (mp4):
-        <video controls playsinline preload="metadata">
-          <source src="../archivos/gases-medicinales/video.mp4" type="video/mp4" />
-        </video>
-    -->
-
-    <div class="video-wrap" id="video-host">
-      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0A1929;color:white;text-align:center;padding:24px;">
-        <div style="font-size:48px;margin-bottom:8px;">🎥</div>
-        <div style="font-weight:600;font-size:17px;margin-bottom:6px;">Video pendiente de cargar</div>
-        <div style="font-size:13.5px;opacity:0.75;max-width:320px;">
-          Reemplaza este bloque por el embed de YouTube o el archivo mp4
-          en <code>archivos/gases-medicinales/video.mp4</code>
-        </div>
-      </div>
-    </div>
-
+    <div id="host"></div>
     <div style="padding:18px 22px 32px;max-width:720px;margin:0 auto;">
-      <p style="color:var(--cofca-muted);font-size:14px;">
-        Este video forma parte del programa de capacitación SST sobre el manejo
-        seguro de gases medicinales en la Clínica Oftalmológica del Caribe.
+      <p style="color:var(--cofca-muted);font-size:14px;" id="pie">
+        Capacitación SST de la Clínica Oftalmológica del Caribe.
       </p>
     </div>
   </main>
+
+  <script src="datos.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get("id");
+    const producto = PRODUCTOS.find(p => p.id === id);
+    const host = document.getElementById("host");
+
+    // Convierte el valor del campo "video" en HTML reproducible.
+    function construirVideo(valor) {
+      const v = (valor || "").trim();
+      if (!v) return null;
+
+      // Formato "youtube:CODIGO"
+      if (v.startsWith("youtube:")) {
+        const code = v.slice(8);
+        return `<div class="video-wrap"><iframe src="https://www.youtube.com/embed/${code}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe></div>`;
+      }
+      // URL de YouTube (embed o normal)
+      if (v.includes("youtube.com") || v.includes("youtu.be")) {
+        let code = "";
+        if (v.includes("/embed/"))      code = v.split("/embed/")[1].split(/[?&]/)[0];
+        else if (v.includes("watch?v=")) code = v.split("watch?v=")[1].split(/[?&]/)[0];
+        else if (v.includes("youtu.be/")) code = v.split("youtu.be/")[1].split(/[?&]/)[0];
+        return `<div class="video-wrap"><iframe src="https://www.youtube.com/embed/${code}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe></div>`;
+      }
+      // Archivo de video (mp4, webm…)
+      if (/\.(mp4|webm|ogg|mov)$/i.test(v)) {
+        const ruta = v.startsWith("http") ? v : `../${v}`;
+        return `<div class="video-wrap"><video controls playsinline preload="metadata">
+          <source src="${ruta}" /></video></div>`;
+      }
+      // Cualquier otra URL → intentar como iframe
+      return `<div class="video-wrap"><iframe src="${v}" allowfullscreen></iframe></div>`;
+    }
+
+    if (producto) {
+      document.getElementById("titulo").textContent = "Video · " + producto.nombre;
+      document.title = `Video · ${producto.nombre} · COFCA`;
+      document.getElementById("volver").href = `producto.html?id=${encodeURIComponent(producto.id)}`;
+
+      const html = construirVideo(producto.video);
+      if (html) {
+        host.innerHTML = html;
+        document.getElementById("pie").textContent =
+          `Video de capacitación sobre el manejo seguro de ${producto.nombre}.`;
+      } else {
+        host.innerHTML = `
+          <div class="video-wrap">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0A1929;color:white;text-align:center;padding:24px;">
+              <div style="font-size:48px;margin-bottom:8px;">🎥</div>
+              <div style="font-weight:600;font-size:17px;margin-bottom:6px;">Video en preparación</div>
+              <div style="font-size:13.5px;opacity:0.75;max-width:320px;">
+                El video de capacitación de <strong>${producto.nombre}</strong> aún no está disponible.
+              </div>
+            </div>
+          </div>`;
+        document.getElementById("pie").innerHTML =
+          `Mientras tanto puedes consultar la <a href="ver-pdf.html?id=${encodeURIComponent(producto.id)}">Hoja de Seguridad</a> de este gas.`;
+      }
+    } else {
+      document.getElementById("titulo").textContent = "Video";
+      host.innerHTML = `
+        <div class="fallback">
+          <p>Gas no encontrado.<br />Vuelve a la lista y selecciona un gas.</p>
+          <a class="btn" href="index.html">Volver a la lista</a>
+        </div>`;
+      document.getElementById("pie").textContent = "";
+    }
+  </script>
 </body>
 </html>

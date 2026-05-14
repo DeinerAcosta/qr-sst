@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#00467F" />
   <title>Productos Químicos · SST COFCA</title>
-  <meta name="description" content="Hoja de Seguridad, Resumen y Video de capacitación sobre productos químicos." />
+  <meta name="description" content="Hojas de seguridad, resúmenes y videos de productos químicos - Clínica Oftalmológica del Caribe." />
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
@@ -15,47 +15,64 @@
       <span>COFCA · SST</span>
     </div>
     <h1 class="title">Productos Químicos</h1>
-    <p class="subtitle">Selecciona la información que deseas consultar</p>
+    <p class="subtitle">Selecciona un producto para ver su información</p>
   </header>
 
   <main class="container">
-    <section class="section">
-      <p class="section-title">Recursos disponibles</p>
-      <div class="cards">
-        <a href="hoja-seguridad.html" class="card">
-          <span class="card-icon">📄</span>
-          <div class="card-body">
-            <div class="card-title">Hoja de Seguridad</div>
-            <div class="card-desc">Ficha técnica oficial (MSDS / SDS)</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <div class="search-wrap">
+      <input id="q" type="search" placeholder="Buscar producto…" autocomplete="off" />
+    </div>
 
-        <a href="resumen.html" class="card">
-          <span class="card-icon accent">📋</span>
-          <div class="card-body">
-            <div class="card-title">Resumen</div>
-            <div class="card-desc">Puntos clave y recomendaciones rápidas</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <div id="lista"></div>
 
-        <a href="video.html" class="card">
-          <span class="card-icon warn">🎥</span>
-          <div class="card-body">
-            <div class="card-title">Video</div>
-            <div class="card-desc">Capacitación visual sobre manejo seguro</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-    </section>
-
+    <p id="vacio" class="list-empty" style="display:none;">
+      No se encontraron productos para esa búsqueda.
+    </p>
   </main>
 
   <footer class="footer">
     <strong>COFCA</strong> · Sistema de Gestión SST<br />
     Área de Productos Químicos
   </footer>
+
+  <script src="datos.js"></script>
+  <script>
+    const lista = document.getElementById("lista");
+    const vacio = document.getElementById("vacio");
+    const q     = document.getElementById("q");
+
+    function normalize(s) {
+      return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    }
+
+    function pintar(filtro = "") {
+      const f = normalize(filtro.trim());
+      lista.innerHTML = "";
+      let count = 0;
+
+      PRODUCTOS.forEach((p, i) => {
+        if (f && !normalize(p.nombre).includes(f)) return;
+        count++;
+
+        const a = document.createElement("a");
+        a.className = "list-item";
+        a.href = `producto.html?id=${encodeURIComponent(p.id)}`;
+        a.innerHTML = `
+          <span class="list-item-num">${i + 1}</span>
+          <div class="list-item-body">
+            <div class="list-item-title">${p.nombre}</div>
+            <div class="list-item-meta">Hoja de Seguridad · Resumen · Video</div>
+          </div>
+          <span class="list-item-arrow">›</span>
+        `;
+        lista.appendChild(a);
+      });
+
+      vacio.style.display = count === 0 ? "block" : "none";
+    }
+
+    q.addEventListener("input", e => pintar(e.target.value));
+    pintar();
+  </script>
 </body>
 </html>
