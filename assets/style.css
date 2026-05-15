@@ -307,7 +307,20 @@ body {
   font-size: 12.5px;
   color: var(--cofca-muted);
   margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+
+.sev-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sev-dot.alto  { background: #DC2626; box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.18); }
+.sev-dot.medio { background: #F59E0B; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.18); }
+.sev-dot.bajo  { background: #22C55E; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18); }
 
 .list-item-arrow {
   color: var(--cofca-muted);
@@ -483,6 +496,68 @@ body {
   margin-bottom: 8px;
 }
 
+/* Severity badges */
+.severity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  background: rgba(255,255,255,0.95);
+}
+
+.severity-badge.alto  { color: #B91C1C; }
+.severity-badge.medio { color: #B45309; }
+.severity-badge.bajo  { color: #166534; }
+
+.severity-badge::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.severity-badge.alto::before  { background: #DC2626; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.18); }
+.severity-badge.medio::before { background: #F59E0B; box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18); }
+.severity-badge.bajo::before  { background: #22C55E; box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18); }
+
+/* Print button bar */
+.epp-actions {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 14px 18px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.epp-actions button {
+  flex: 1;
+  background: var(--cofca-surface);
+  border: 1px solid var(--cofca-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cofca-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.epp-actions button:hover {
+  background: var(--cofca-bg);
+  border-color: var(--cofca-secondary);
+}
+
 .epp-hero h1 {
   font-size: 24px;
   font-weight: 700;
@@ -552,6 +627,38 @@ body {
   color: #6B4400;
   font-size: 13.5px;
   text-align: center;
+}
+
+/* Print-friendly version of EPP card (for hanging on the wall) */
+@media print {
+  body { background: white !important; }
+  .viewer-header,
+  .epp-actions,
+  .epp-note { display: none !important; }
+  .epp-hero {
+    background: white !important;
+    color: var(--cofca-text) !important;
+    border: 3px solid #E85D00;
+    border-radius: 14px;
+    padding: 18px 16px;
+    margin: 12px;
+  }
+  .epp-hero .epp-product { color: #E85D00; opacity: 1; }
+  .epp-hero h1 { color: var(--cofca-primary); }
+  .epp-hero .epp-sub { color: var(--cofca-text); }
+  .severity-badge {
+    background: white !important;
+    border: 2px solid currentColor;
+  }
+  .epp-grid { padding: 6px 12px; gap: 8px; }
+  .epp-item {
+    box-shadow: none !important;
+    border: 1px solid #999 !important;
+    border-left: 5px solid #E85D00 !important;
+    page-break-inside: avoid;
+  }
+  .epp-item-icon { background: #FFF1E0 !important; border: 1px solid #FFE0BE !important; }
+  @page { size: A5; margin: 8mm; }
 }
 
 /* Loading hint when PDF embed fails */

@@ -18,6 +18,12 @@
       <div class="epp-product">Manejo seguro</div>
       <h1 id="nombre">Gas</h1>
       <div class="epp-sub">Antes de manipular este gas, asegúrate de:</div>
+      <div id="severidad-wrap"></div>
+    </div>
+
+    <div class="epp-actions">
+      <button id="imprimir">🖨️ Imprimir tarjeta</button>
+      <button id="compartir">📤 Compartir</button>
     </div>
 
     <div class="epp-grid" id="lista"></div>
@@ -34,10 +40,22 @@
     const producto = PRODUCTOS.find(p => p.id === id);
     const lista = document.getElementById("lista");
 
+    const SEVERIDAD_LABEL = {
+      alto:  "⚠ Riesgo alto",
+      medio: "● Riesgo medio",
+      bajo:  "✓ Riesgo bajo",
+    };
+
     if (producto) {
       document.getElementById("nombre").textContent = producto.nombre;
       document.title = `EPP · ${producto.nombre} · COFCA`;
       document.getElementById("volver").href = `producto.html?id=${encodeURIComponent(producto.id)}`;
+
+      if (producto.severidad) {
+        const s = producto.severidad;
+        document.getElementById("severidad-wrap").innerHTML =
+          `<span class="severity-badge ${s}">${SEVERIDAD_LABEL[s] || s}</span>`;
+      }
 
       if (producto.epp && producto.epp.length > 0) {
         producto.epp.forEach(item => {
@@ -53,12 +71,29 @@
         lista.innerHTML = `<div class="epp-empty">Información en preparación.<br />
           Consulta la Ficha de Datos de Seguridad para conocer las medidas de manejo.</div>`;
       }
+
+      document.getElementById("imprimir").addEventListener("click", () => window.print());
+      document.getElementById("compartir").addEventListener("click", async () => {
+        const url = location.href;
+        const titulo = `EPP · ${producto.nombre} · COFCA`;
+        if (navigator.share) {
+          try { await navigator.share({ title: titulo, url }); } catch (_) {}
+        } else {
+          try {
+            await navigator.clipboard.writeText(url);
+            alert("Enlace copiado al portapapeles");
+          } catch (_) {
+            prompt("Copia este enlace:", url);
+          }
+        }
+      });
     } else {
       document.getElementById("nombre").textContent = "Gas no encontrado";
       lista.innerHTML = `<div class="epp-empty">
           Gas no encontrado. <a href="index.html">Volver a la lista</a>.
         </div>`;
       document.getElementById("nota").style.display = "none";
+      document.querySelector(".epp-actions").style.display = "none";
     }
   </script>
 </body>

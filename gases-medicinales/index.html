@@ -57,11 +57,14 @@
         const a = document.createElement("a");
         a.className = "list-item";
         a.href = `producto.html?id=${encodeURIComponent(p.id)}`;
+        const dot = p.severidad
+          ? `<span class="sev-dot ${p.severidad}" title="Riesgo ${p.severidad}"></span>`
+          : "";
         a.innerHTML = `
           <span class="list-item-num">${i + 1}</span>
           <div class="list-item-body">
             <div class="list-item-title">${p.nombre}</div>
-            <div class="list-item-meta">Manejo seguro · Hoja de Seguridad · Resumen · Video</div>
+            <div class="list-item-meta">${dot}Manejo · Hoja · Resumen · Video</div>
           </div>
           <span class="list-item-arrow">›</span>
         `;

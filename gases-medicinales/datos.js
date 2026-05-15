@@ -34,6 +34,7 @@ const PRODUCTOS = [
   {
     id: "aire-medicinal",
     nombre: "Aire Medicinal (Comprimido y Sintético)",
+    severidad: "medio",
     pdf: "aire-medicinal.pdf",
     video: "",
     epp: [
@@ -69,6 +70,7 @@ const PRODUCTOS = [
   {
     id: "dioxido-de-carbono",
     nombre: "Dióxido de Carbono (Dioxicarbomed)",
+    severidad: "alto",
     pdf: "dioxido-de-carbono.pdf",
     video: "",
     epp: [
@@ -104,6 +106,7 @@ const PRODUCTOS = [
   {
     id: "oxido-nitroso",
     nombre: "Óxido Nitroso",
+    severidad: "alto",
     pdf: "oxido-nitroso.pdf",
     video: "",
     epp: [
@@ -141,6 +144,7 @@ const PRODUCTOS = [
   {
     id: "oxigeno-liquido",
     nombre: "Oxígeno Líquido (LOX)",
+    severidad: "alto",
     pdf: "oxigeno-liquido.pdf",
     video: "",
     epp: [
@@ -178,6 +182,7 @@ const PRODUCTOS = [
   {
     id: "oxigeno-medicinal",
     nombre: "Oxígeno Medicinal",
+    severidad: "alto",
     pdf: "oxigeno-medicinal.pdf",
     video: "",
     epp: [

@@ -44,6 +44,7 @@ const PRODUCTOS = [
   {
     id: "1-thinner",
     nombre: "Thinner Corriente",
+    severidad: "alto",
     pdf: "1-thinner.pdf",
     video: "",
     epp: [
@@ -80,6 +81,7 @@ const PRODUCTOS = [
   {
     id: "2-vasrsol",
     nombre: "Varsol (Disolvente)",
+    severidad: "medio",
     pdf: "2-vasrsol.pdf",
     video: "",
     epp: [
@@ -117,6 +119,7 @@ const PRODUCTOS = [
   {
     id: "3-aerosol",
     nombre: "Pintura en Aerosol Sapolin",
+    severidad: "alto",
     pdf: "3-aerosol.pdf",
     video: "",
     epp: [
@@ -154,6 +157,7 @@ const PRODUCTOS = [
   {
     id: "4-esmalte",
     nombre: "Esmalte Top Quality",
+    severidad: "alto",
     pdf: "4-esmalte.pdf",
     video: "",
     epp: [
@@ -189,6 +193,7 @@ const PRODUCTOS = [
   {
     id: "5-poliuretano",
     nombre: "Esmalte Poliuretano",
+    severidad: "medio",
     pdf: "5-poliuretano.pdf",
     video: "",
     epp: [
@@ -223,6 +228,7 @@ const PRODUCTOS = [
   {
     id: "6-aceites-lubricantes",
     nombre: "Aceites Lubricantes",
+    severidad: "bajo",
     pdf: "6-aceites-lubricantes.pdf",
     video: "",
     epp: [
@@ -256,6 +262,7 @@ const PRODUCTOS = [
   {
     id: "7-boxer",
     nombre: "Boxer",
+    severidad: "alto",
     pdf: "7-boxer.pdf",
     video: "",
     epp: [
@@ -292,6 +299,7 @@ const PRODUCTOS = [
   {
     id: "8-pegante-tubos",
     nombre: "Soldamax Pavco (Pegante PVC)",
+    severidad: "alto",
     pdf: "8-pegante-tubos.pdf",
     video: "",
     epp: [
@@ -327,6 +335,7 @@ const PRODUCTOS = [
   {
     id: "9-hipoclorito",
     nombre: "Hipoclorito",
+    severidad: "alto",
     pdf: "9-hipoclorito.pdf",
     video: "",
     epp: [
@@ -363,6 +372,7 @@ const PRODUCTOS = [
   {
     id: "10-klaxinn",
     nombre: "Klaxinn Tabs Detclork 500",
+    severidad: "medio",
     pdf: "10-klaxinn.pdf",
     video: "",
     epp: [
@@ -400,6 +410,7 @@ const PRODUCTOS = [
   {
     id: "11-alka-dds",
     nombre: "Alka DDS",
+    severidad: "alto",
     pdf: "11-alka-dds.pdf",
     video: "",
     epp: [
@@ -432,6 +443,7 @@ const PRODUCTOS = [
   {
     id: "12-surfalkan",
     nombre: "Surfalkan SH",
+    severidad: "bajo",
     pdf: "12-surfalkan.pdf",
     video: "",
     epp: [
@@ -461,6 +473,7 @@ const PRODUCTOS = [
   {
     id: "13-pegante-sika",
     nombre: "Sika Imper Mur",
+    severidad: "bajo",
     pdf: "13-pegante-sika.pdf",
     video: "",
     epp: [
@@ -495,6 +508,7 @@ const PRODUCTOS = [
   {
     id: "14-hs-r410a-es",
     nombre: "Refrigerante R-410A",
+    severidad: "alto",
     pdf: "14-hs-r410a-es.pdf",
     video: "",
     epp: [
@@ -532,6 +546,7 @@ const PRODUCTOS = [
   {
     id: "15-extintor-dioxido-de-carbono",
     nombre: "Extintor de Dióxido de Carbono (CO₂)",
+    severidad: "medio",
     pdf: "15-extintor-dioxido-de-carbono.pdf",
     video: "",
     epp: [
@@ -567,6 +582,7 @@ const PRODUCTOS = [
   {
     id: "16-acpm",
     nombre: "ACPM (Diésel)",
+    severidad: "medio",
     pdf: "16-acpm.pdf",
     video: "",
     epp: [
@@ -602,6 +618,7 @@ const PRODUCTOS = [
   {
     id: "17-masilla-super-mastick",
     nombre: "Masilla Supermastick PR",
+    severidad: "alto",
     pdf: "17-masilla-super-mastick.pdf",
     video: "",
     epp: [
@@ -638,6 +655,7 @@ const PRODUCTOS = [
   {
     id: "18-limpiador-desincrusante",
     nombre: "Limpiador Desincrustante",
+    severidad: "medio",
     pdf: "18-limpiador-desincrusante.pdf",
     video: "",
     epp: [
@@ -667,6 +685,7 @@ const PRODUCTOS = [
   {
     id: "18-pegante-pvc",
     nombre: "Pegante Pisos de PVC",
+    severidad: "bajo",
     pdf: "18-pegante-pvc.pdf",
     video: "",
     epp: [
@@ -702,6 +721,7 @@ const PRODUCTOS = [
   {
     id: "19-evav-clean",
     nombre: "Evaporator Cleaner",
+    severidad: "alto",
     pdf: "19-evav-clean.pdf",
     video: "",
     epp: [
@@ -738,6 +758,7 @@ const PRODUCTOS = [
   {
     id: "20-diablo-rojo",
     nombre: "Diablo Rojo",
+    severidad: "alto",
     pdf: "20-diablo-rojo.pdf",
     video: "",
     epp: [
@@ -774,6 +795,7 @@ const PRODUCTOS = [
   {
     id: "21-quita-oxidos",
     nombre: "Pintóxido Incoloro",
+    severidad: "alto",
     pdf: "21-quita-oxidos.pdf",
     video: "",
     epp: [
@@ -808,6 +830,7 @@ const PRODUCTOS = [
   {
     id: "22-limpiador-desincrusante",
     nombre: "Limpiador Desincrustante (2)",
+    severidad: "medio",
     pdf: "22-limpiador-desincrusante.pdf",
     video: "",
     epp: [
@@ -837,6 +860,7 @@ const PRODUCTOS = [
   {
     id: "23-alkazyme",
     nombre: "Alkazyme",
+    severidad: "alto",
     pdf: "23-alkazyme.pdf",
     video: "",
     epp: [
@@ -870,6 +894,7 @@ const PRODUCTOS = [
   {
     id: "24-barniz-acrilico-spray",
     nombre: "MTN Pro Barniz Acrílico",
+    severidad: "alto",
     pdf: "24-barniz-acrilico-spray.pdf",
     video: "",
     epp: [
@@ -906,6 +931,7 @@ const PRODUCTOS = [
   {
     id: "25-pintura-multiproposito",
     nombre: "Ivenol (Pintura Multipropósito)",
+    severidad: "alto",
     pdf: "25-pintura-multiproposito.pdf",
     video: "",
     epp: [
@@ -943,6 +969,7 @@ const PRODUCTOS = [
   {
     id: "26-limpiador-electrico",
     nombre: "Limpiador de Contactos 3 en Uno",
+    severidad: "alto",
     pdf: "26-limpiador-electrico.pdf",
     video: "",
     epp: [
@@ -980,6 +1007,7 @@ const PRODUCTOS = [
   {
     id: "27-sika-impermeabilizante",
     nombre: "Sika Imper Mur",
+    severidad: "bajo",
     pdf: "27-sika-impermeabilizante.pdf",
     video: "",
     epp: [
@@ -1014,6 +1042,7 @@ const PRODUCTOS = [
   {
     id: "28-butano",
     nombre: "Butano",
+    severidad: "alto",
     pdf: "28-butano.pdf",
     video: "",
     epp: [
@@ -1047,6 +1076,7 @@ const PRODUCTOS = [
   {
     id: "29-silicona-pegavidrios",
     nombre: "Sikasil E (Silicona Pega Vidrios)",
+    severidad: "bajo",
     pdf: "29-silicona-pegavidrios.pdf",
     video: "",
     epp: [
@@ -1079,6 +1109,7 @@ const PRODUCTOS = [
   {
     id: "30-soda-caustica",
     nombre: "Soda Cáustica Líquida 50%",
+    severidad: "alto",
     pdf: "30-soda-caustica.pdf",
     video: "",
     epp: [
@@ -1115,6 +1146,7 @@ const PRODUCTOS = [
   {
     id: "31-hipoclorito-sodio",
     nombre: "Hipoclorito de Sodio al 13%",
+    severidad: "alto",
     pdf: "31-hipoclorito-sodio.pdf",
     video: "",
     epp: [
@@ -1152,6 +1184,7 @@ const PRODUCTOS = [
   {
     id: "32-jabon-liquido",
     nombre: "Jabón Líquido",
+    severidad: "bajo",
     pdf: "32-jabon-liquido.pdf",
     video: "",
     epp: [
@@ -1182,6 +1215,7 @@ const PRODUCTOS = [
   {
     id: "33-hipoclorito-13",
     nombre: "Hipoclorito al 13%",
+    severidad: "alto",
     pdf: "33-hipoclorito-13.pdf",
     video: "",
     epp: [
@@ -1194,6 +1228,7 @@ const PRODUCTOS = [
   {
     id: "34-desinfectante",
     nombre: "Desinfectante",
+    severidad: "medio",
     pdf: "34-desinfectante.pdf",
     video: "",
     epp: [
