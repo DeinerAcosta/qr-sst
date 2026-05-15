@@ -46,6 +46,12 @@ const PRODUCTOS = [
     nombre: "Thinner Corriente",
     pdf: "1-thinner.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa resistentes a solventes" },
+      { icono: "👁️", texto: "Gafas de seguridad / protección facial" },
+      { icono: "💨", texto: "Trabajar en área bien ventilada" },
+      { icono: "🚭", texto: "No fumar — alejado de chispas y llamas" },
+    ],
     resumen: `
       <h2>Thinner Corriente</h2>
       <p><strong>Uso:</strong> Disolvente. Mezcla de xileno, acetato de etilo, etanol y otros solventes.</p>
@@ -76,6 +82,12 @@ const PRODUCTOS = [
     nombre: "Varsol (Disolvente)",
     pdf: "2-vasrsol.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes resistentes a solventes" },
+      { icono: "👁️", texto: "Gafas de seguridad" },
+      { icono: "💨", texto: "Área ventilada, sin fuentes de ignición" },
+      { icono: "🚭", texto: "No fumar" },
+    ],
     resumen: `
       <h2>Varsol (Disolvente)</h2>
       <p><strong>Uso:</strong> Disolvente / espíritu mineral (disolvente Stoddard).
@@ -107,6 +119,13 @@ const PRODUCTOS = [
     nombre: "Pintura en Aerosol Sapolin",
     pdf: "3-aerosol.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "💨", texto: "Usar en lugar bien ventilado" },
+      { icono: "😷", texto: "No respirar el aerosol" },
+      { icono: "🚭", texto: "No fumar — no pulverizar sobre llamas" },
+    ],
     resumen: `
       <h2>Pintura en Aerosol Sapolin</h2>
       <p><strong>Uso:</strong> Pintura en aerosol.</p>
@@ -137,6 +156,12 @@ const PRODUCTOS = [
     nombre: "Esmalte Top Quality",
     pdf: "4-esmalte.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "💨", texto: "Área ventilada" },
+      { icono: "🚭", texto: "No fumar" },
+    ],
     resumen: `
       <h2>Esmalte Top Quality</h2>
       <p><strong>Uso:</strong> Pintura (esmalte).</p>
@@ -166,6 +191,12 @@ const PRODUCTOS = [
     nombre: "Esmalte Poliuretano",
     pdf: "5-poliuretano.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "📦", texto: "Mantener el recipiente herméticamente cerrado" },
+      { icono: "🚭", texto: "Alejado del calor y de fuentes de ignición" },
+    ],
     resumen: `
       <h2>Esmalte Poliuretano</h2>
       <p><strong>Uso:</strong> Pintura (esmalte poliuretano). Uso exclusivo industrial.</p>
@@ -194,6 +225,10 @@ const PRODUCTOS = [
     nombre: "Aceites Lubricantes",
     pdf: "6-aceites-lubricantes.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "⚠️", texto: "Evitar el contacto prolongado con la piel" },
+    ],
     resumen: `
       <h2>Aceites Lubricantes</h2>
       <p><strong>Uso:</strong> Aceites lubricantes minerales y/o sintéticos para motores y equipos.</p>
@@ -223,6 +258,12 @@ const PRODUCTOS = [
     nombre: "Boxer",
     pdf: "7-boxer.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y prendas de protección" },
+      { icono: "😷", texto: "Mascarilla / máscara de protección — NO respirar" },
+      { icono: "👁️", texto: "Gafas de protección" },
+      { icono: "🚱", texto: "No contaminar fuentes de agua" },
+    ],
     resumen: `
       <h2>Boxer</h2>
       <p><strong>Uso:</strong> Fungicida agrícola (a base de hidróxido cúprico).</p>
@@ -253,6 +294,12 @@ const PRODUCTOS = [
     nombre: "Soldamax Pavco (Pegante PVC)",
     pdf: "8-pegante-tubos.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "💨", texto: "Usar en lugar bien ventilado" },
+      { icono: "🍽️", texto: "No comer, beber ni fumar al usarlo" },
+    ],
     resumen: `
       <h2>Soldamax Pavco (Pegante PVC)</h2>
       <p><strong>Uso:</strong> Soldadura líquida para uniones de tubería de PVC / CPVC.</p>
@@ -282,6 +329,13 @@ const PRODUCTOS = [
     nombre: "Hipoclorito",
     pdf: "9-hipoclorito.pdf",
     video: "",
+    epp: [
+      { icono: "🥼", texto: "Traje de hule" },
+      { icono: "🥾", texto: "Botas de hule" },
+      { icono: "🧤", texto: "Guantes de hule" },
+      { icono: "👁️", texto: "Gogles y careta facial contra salpicaduras" },
+      { icono: "⚠️", texto: "NUNCA mezclar con ácidos ni amoniaco (libera cloro)" },
+    ],
     resumen: `
       <h2>Hipoclorito (de Sodio)</h2>
       <p><strong>Uso:</strong> Solución de hipoclorito de sodio — blanqueador y desinfectante (agente oxidante).</p>
@@ -311,6 +365,12 @@ const PRODUCTOS = [
     nombre: "Klaxinn Tabs Detclork 500",
     pdf: "10-klaxinn.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Gafas o máscara de protección" },
+      { icono: "💨", texto: "Usar en áreas bien ventiladas" },
+      { icono: "🍽️", texto: "No comer, beber ni fumar al usarlo" },
+    ],
     resumen: `
       <h2>Klaxinn Tabs Detclork 500</h2>
       <p><strong>Uso:</strong> Limpiador y desinfectante en tabletas efervescentes
@@ -342,6 +402,10 @@ const PRODUCTOS = [
     nombre: "Alka DDS",
     pdf: "11-alka-dds.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y prendas de protección" },
+      { icono: "👁️", texto: "Gafas o máscara de protección" },
+    ],
     resumen: `
       <h2>Alka DDS</h2>
       <p><strong>Uso:</strong> Detergente desinfectante para todas las superficies lavables.</p>
@@ -370,6 +434,11 @@ const PRODUCTOS = [
     nombre: "Surfalkan SH",
     pdf: "12-surfalkan.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Evitar el contacto con los ojos" },
+      { icono: "💧", texto: "Respetar la dilución indicada" },
+    ],
     resumen: `
       <h2>Surfalkan SH</h2>
       <p><strong>Uso:</strong> Detergente desinfectante listo para uso, para la limpieza y
@@ -394,6 +463,10 @@ const PRODUCTOS = [
     nombre: "Sika Imper Mur",
     pdf: "13-pegante-sika.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Gafas de seguridad" },
+    ],
     resumen: `
       <h2>Sika Imper Mur</h2>
       <p><strong>Uso:</strong> Aditivo impermeabilizante para muros (dispersión acuosa de polímero acrílico).</p>
@@ -424,6 +497,12 @@ const PRODUCTOS = [
     nombre: "Refrigerante R-410A",
     pdf: "14-hs-r410a-es.pdf",
     video: "",
+    epp: [
+      { icono: "❄️", texto: "Guantes aislantes contra el frío" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "💨", texto: "Trabajar en lugar bien ventilado" },
+      { icono: "🚭", texto: "Alejado de fuentes de calor" },
+    ],
     resumen: `
       <h2>Refrigerante R-410A</h2>
       <p><strong>Uso:</strong> Gas refrigerante para sistemas de aire acondicionado.
@@ -455,6 +534,11 @@ const PRODUCTOS = [
     nombre: "Extintor de Dióxido de Carbono (CO₂)",
     pdf: "15-extintor-dioxido-de-carbono.pdf",
     video: "",
+    epp: [
+      { icono: "✅", texto: "Verificar la presión y el sello antes de usar" },
+      { icono: "📏", texto: "Mantenerse a unos 3 metros del fuego" },
+      { icono: "💨", texto: "Si se usa en espacio cerrado: ventilar después" },
+    ],
     resumen: `
       <h2>Extintor de Dióxido de Carbono (CO₂)</h2>
       <p><strong>Uso:</strong> Extintor para fuegos clase B (líquidos y gases inflamables)
@@ -485,6 +569,11 @@ const PRODUCTOS = [
     nombre: "ACPM (Diésel)",
     pdf: "16-acpm.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Gafas de seguridad" },
+      { icono: "🚭", texto: "Eliminar fuentes de ignición — no fumar" },
+    ],
     resumen: `
       <h2>ACPM (Diésel)</h2>
       <p><strong>Uso:</strong> Combustible diésel / aceite combustible para motores.</p>
@@ -515,6 +604,13 @@ const PRODUCTOS = [
     nombre: "Masilla Supermastick PR",
     pdf: "17-masilla-super-mastick.pdf",
     video: "",
+    epp: [
+      { icono: "😷", texto: "Protección respiratoria — NO respirar el polvo" },
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Protección para los ojos" },
+      { icono: "🥼", texto: "Ropa de protección" },
+      { icono: "🍽️", texto: "No comer, beber ni fumar al usarlo" },
+    ],
     resumen: `
       <h2>Masilla Supermastick PR</h2>
       <p><strong>Uso:</strong> Compuesto en pasta para el tratamiento de juntas de paneles de yeso.</p>
@@ -544,6 +640,12 @@ const PRODUCTOS = [
     nombre: "Limpiador Desincrustante",
     pdf: "18-limpiador-desincrusante.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes resistentes a químicos" },
+      { icono: "👁️", texto: "Gafas y protección facial" },
+      { icono: "💨", texto: "Trabajar en área ventilada" },
+      { icono: "⚠️", texto: "No mezclar con otros productos" },
+    ],
     resumen: `
       <h2>Limpiador Desincrustante</h2>
       <div class="callout danger">
@@ -567,6 +669,11 @@ const PRODUCTOS = [
     nombre: "Pegante Pisos de PVC",
     pdf: "18-pegante-pvc.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de nitrilo o neopreno" },
+      { icono: "👁️", texto: "Gafas protectoras contra salpicaduras" },
+      { icono: "💨", texto: "Manipular en lugar ventilado" },
+    ],
     resumen: `
       <h2>Pegante Pisos de PVC</h2>
       <p><strong>Uso:</strong> Pegante para pisos de PVC.</p>
@@ -597,6 +704,12 @@ const PRODUCTOS = [
     nombre: "Evaporator Cleaner",
     pdf: "19-evav-clean.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Protección para los ojos" },
+      { icono: "💨", texto: "Usar en área ventilada" },
+      { icono: "🚭", texto: "No fumar — no pulverizar sobre llamas" },
+    ],
     resumen: `
       <h2>Evaporator Cleaner</h2>
       <p><strong>Uso:</strong> Limpiador no espumoso para sistemas de aire acondicionado.</p>
@@ -627,6 +740,12 @@ const PRODUCTOS = [
     nombre: "Diablo Rojo",
     pdf: "20-diablo-rojo.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "😷", texto: "No respirar polvos ni nieblas" },
+      { icono: "🍽️", texto: "No comer, beber ni fumar al usarlo" },
+    ],
     resumen: `
       <h2>Diablo Rojo</h2>
       <p><strong>Uso:</strong> Destapador de cañerías (potente agente químico).</p>
@@ -657,6 +776,11 @@ const PRODUCTOS = [
     nombre: "Pintóxido Incoloro",
     pdf: "21-quita-oxidos.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "🧼", texto: "Lavarse cuidadosamente después de la manipulación" },
+    ],
     resumen: `
       <h2>Pintóxido Incoloro</h2>
       <p><strong>Uso:</strong> Producto a base de ácido fosfórico (uso profesional).</p>
@@ -686,6 +810,12 @@ const PRODUCTOS = [
     nombre: "Limpiador Desincrustante (2)",
     pdf: "22-limpiador-desincrusante.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes resistentes a químicos" },
+      { icono: "👁️", texto: "Gafas y protección facial" },
+      { icono: "💨", texto: "Trabajar en área ventilada" },
+      { icono: "⚠️", texto: "No mezclar con otros productos" },
+    ],
     resumen: `
       <h2>Limpiador Desincrustante (2)</h2>
       <div class="callout danger">
@@ -709,6 +839,10 @@ const PRODUCTOS = [
     nombre: "Alkazyme",
     pdf: "23-alkazyme.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y prendas de protección" },
+      { icono: "👁️", texto: "Gafas o máscara de protección" },
+    ],
     resumen: `
       <h2>Alkazyme</h2>
       <p><strong>Uso:</strong> Detergente desinfectante enzimático alcalino para la limpieza
@@ -738,6 +872,12 @@ const PRODUCTOS = [
     nombre: "MTN Pro Barniz Acrílico",
     pdf: "24-barniz-acrilico-spray.pdf",
     video: "",
+    epp: [
+      { icono: "😷", texto: "No respirar el aerosol" },
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "💨", texto: "Usar en exteriores o lugar bien ventilado" },
+      { icono: "🚭", texto: "No fumar — no pulverizar sobre llamas" },
+    ],
     resumen: `
       <h2>MTN Pro Barniz Acrílico</h2>
       <p><strong>Uso:</strong> Barniz acrílico en aerosol.</p>
@@ -768,6 +908,11 @@ const PRODUCTOS = [
     nombre: "Ivenol (Pintura Multipropósito)",
     pdf: "25-pintura-multiproposito.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "😷", texto: "Evitar respirar vapores y nieblas" },
+      { icono: "⚠️", texto: "Seguir las instrucciones de uso" },
+    ],
     resumen: `
       <h2>Ivenol</h2>
       <div class="callout danger">
@@ -800,6 +945,12 @@ const PRODUCTOS = [
     nombre: "Limpiador de Contactos 3 en Uno",
     pdf: "26-limpiador-electrico.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes protectores" },
+      { icono: "😷", texto: "Evitar respirar los vapores o neblinas" },
+      { icono: "💨", texto: "Usar al aire libre o en lugar bien ventilado" },
+      { icono: "🚭", texto: "No fumar" },
+    ],
     resumen: `
       <h2>Limpiador de Contactos 3 en Uno</h2>
       <p><strong>Uso:</strong> Limpiador y lubricante de contactos eléctricos (WD-40).</p>
@@ -831,6 +982,10 @@ const PRODUCTOS = [
     nombre: "Sika Imper Mur",
     pdf: "27-sika-impermeabilizante.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Gafas de seguridad" },
+    ],
     resumen: `
       <h2>Sika Imper Mur</h2>
       <p><strong>Uso:</strong> Aditivo impermeabilizante para muros (dispersión acuosa de polímero acrílico).</p>
@@ -861,6 +1016,11 @@ const PRODUCTOS = [
     nombre: "Butano",
     pdf: "28-butano.pdf",
     video: "",
+    epp: [
+      { icono: "💨", texto: "Usar al aire libre o en lugar bien ventilado" },
+      { icono: "🚭", texto: "Alejado de calor, chispas y llamas — no fumar" },
+      { icono: "📦", texto: "Recipiente cerrado, bajo llave" },
+    ],
     resumen: `
       <h2>Butano</h2>
       <p><strong>Uso:</strong> Gas combustible doméstico e industrial.</p>
@@ -889,6 +1049,10 @@ const PRODUCTOS = [
     nombre: "Sikasil E (Silicona Pega Vidrios)",
     pdf: "29-silicona-pegavidrios.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "💨", texto: "Disponer de ventilación al aplicar" },
+    ],
     resumen: `
       <h2>Sikasil E (Silicona Pega Vidrios)</h2>
       <p><strong>Uso:</strong> Silicona acética antihongos para el sello de juntas o uniones
@@ -917,6 +1081,12 @@ const PRODUCTOS = [
     nombre: "Soda Cáustica Líquida 50%",
     pdf: "30-soda-caustica.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "😷", texto: "No respirar polvos ni nieblas" },
+      { icono: "⚠️", texto: "Recipiente resistente a la corrosión, bajo llave" },
+    ],
     resumen: `
       <h2>Soda Cáustica Líquida 50%</h2>
       <p><strong>Uso:</strong> Hidróxido de sodio líquido al 50%. Tratamiento de aguas
@@ -947,6 +1117,12 @@ const PRODUCTOS = [
     nombre: "Hipoclorito de Sodio al 13%",
     pdf: "31-hipoclorito-sodio.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "🧼", texto: "Lavarse la piel cuidadosamente después" },
+      { icono: "⚠️", texto: "NUNCA mezclar con ácido ni amoniaco (libera cloro)" },
+    ],
     resumen: `
       <h2>Hipoclorito de Sodio al 13%</h2>
       <p><strong>Uso:</strong> Desinfectante de superficies, pisos, equipos y calzado
@@ -978,6 +1154,10 @@ const PRODUCTOS = [
     nombre: "Jabón Líquido",
     pdf: "32-jabon-liquido.pdf",
     video: "",
+    epp: [
+      { icono: "👁️", texto: "Evitar el contacto con ojos y mucosas" },
+      { icono: "✅", texto: "Producto de bajo riesgo — uso normal seguro" },
+    ],
     resumen: `
       <h2>Jabón Líquido</h2>
       <p><strong>Uso:</strong> Jabón líquido antibacterial para la higiene de manos, con pH
@@ -1004,6 +1184,11 @@ const PRODUCTOS = [
     nombre: "Hipoclorito al 13%",
     pdf: "33-hipoclorito-13.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes y ropa de protección" },
+      { icono: "👁️", texto: "Protección para los ojos / la cara" },
+      { icono: "⚠️", texto: "NUNCA mezclar con ácido ni amoniaco (libera cloro)" },
+    ],
     resumen: ""
   },
   {
@@ -1011,6 +1196,12 @@ const PRODUCTOS = [
     nombre: "Desinfectante",
     pdf: "34-desinfectante.pdf",
     video: "",
+    epp: [
+      { icono: "🧤", texto: "Guantes de protección" },
+      { icono: "👁️", texto: "Protección para los ojos" },
+      { icono: "💨", texto: "Usar en área ventilada" },
+      { icono: "⚠️", texto: "Seguir la dilución y las instrucciones del fabricante" },
+    ],
     resumen: ""
   },
 ];

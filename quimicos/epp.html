@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#E85D00" />
+  <title>EPP · SST COFCA</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="viewer-header" style="background:#E85D00;">
+    <a id="volver" href="index.html" class="back-btn" aria-label="Volver">‹</a>
+    <div class="viewer-title">Equipos de Protección Personal</div>
+  </header>
+
+  <main class="viewer-content">
+    <div class="epp-hero">
+      <div class="epp-product">EPP requerido</div>
+      <h1 id="nombre">Producto</h1>
+      <div class="epp-sub">Antes de manipular este producto, asegúrate de usar:</div>
+    </div>
+
+    <div class="epp-grid" id="lista"></div>
+
+    <p class="epp-note" id="nota">
+      Este es un acceso rápido a los elementos de protección.
+      Para detalles completos consulta la <strong>Hoja de Seguridad</strong> y el <strong>Resumen</strong>.
+    </p>
+  </main>
+
+  <script src="datos.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get("id");
+    const producto = PRODUCTOS.find(p => p.id === id);
+    const lista = document.getElementById("lista");
+
+    if (producto) {
+      document.getElementById("nombre").textContent = producto.nombre;
+      document.title = `EPP · ${producto.nombre} · COFCA`;
+      document.getElementById("volver").href = `producto.html?id=${encodeURIComponent(producto.id)}`;
+
+      if (producto.epp && producto.epp.length > 0) {
+        producto.epp.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "epp-item";
+          div.innerHTML = `
+            <span class="epp-item-icon">${item.icono}</span>
+            <div class="epp-item-text">${item.texto}</div>
+          `;
+          lista.appendChild(div);
+        });
+      } else {
+        lista.innerHTML = `<div class="epp-empty">EPP en preparación.<br />
+          Consulta la Hoja de Seguridad para conocer los elementos de protección.</div>`;
+      }
+    } else {
+      document.getElementById("nombre").textContent = "Producto no encontrado";
+      lista.innerHTML = `<div class="epp-empty">
+          Producto no encontrado. <a href="index.html">Volver a la lista</a>.
+        </div>`;
+      document.getElementById("nota").style.display = "none";
+    }
+  </script>
+</body>
+</html>

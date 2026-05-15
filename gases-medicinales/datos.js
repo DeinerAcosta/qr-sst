@@ -36,6 +36,12 @@ const PRODUCTOS = [
     nombre: "Aire Medicinal (Comprimido y Sintético)",
     pdf: "aire-medicinal.pdf",
     video: "",
+    epp: [
+      { icono: "🛢️", texto: "Asegurar los cilindros con cadena o soporte" },
+      { icono: "🚫🛢️", texto: "Válvulas y conexiones LIBRES de aceite y grasa" },
+      { icono: "🔥", texto: "Alejado de la ropa y materiales combustibles" },
+      { icono: "💨", texto: "Almacenar en lugar ventilado" },
+    ],
     resumen: `
       <h2>Aire Medicinal (Comprimido y Sintético)</h2>
       <p><strong>Uso:</strong> Mezcla de nitrógeno y oxígeno, incolora e inodora, a alta presión.
@@ -65,6 +71,11 @@ const PRODUCTOS = [
     nombre: "Dióxido de Carbono (Dioxicarbomed)",
     pdf: "dioxido-de-carbono.pdf",
     video: "",
+    epp: [
+      { icono: "💨", texto: "Usar al aire libre o en lugar bien ventilado" },
+      { icono: "🛢️", texto: "Asegurar los cilindros en posición vertical" },
+      { icono: "⚠️", texto: "El gas se acumula en zonas bajas — riesgo de asfixia" },
+    ],
     resumen: `
       <h2>Dióxido de Carbono (Dioxicarbomed)</h2>
       <p><strong>Uso:</strong> Gas licuado a alta presión. Cirugía laparoscópica, endoscopia,
@@ -95,6 +106,12 @@ const PRODUCTOS = [
     nombre: "Óxido Nitroso",
     pdf: "oxido-nitroso.pdf",
     video: "",
+    epp: [
+      { icono: "🚫🛢️", texto: "Válvulas y conexiones LIBRES de aceite y grasa" },
+      { icono: "🔥", texto: "Alejado de la ropa y materiales combustibles" },
+      { icono: "💨", texto: "Usar en lugar bien ventilado" },
+      { icono: "🛢️", texto: "Asegurar los cilindros — gas se acumula en zonas bajas" },
+    ],
     resumen: `
       <h2>Óxido Nitroso</h2>
       <p><strong>Uso:</strong> Gas licuado de olor y sabor ligeramente dulce. Analgésico y
@@ -126,6 +143,12 @@ const PRODUCTOS = [
     nombre: "Oxígeno Líquido (LOX)",
     pdf: "oxigeno-liquido.pdf",
     video: "",
+    epp: [
+      { icono: "❄️", texto: "Guantes aislantes contra el frío" },
+      { icono: "👁️", texto: "Protección para la cara o los ojos" },
+      { icono: "🚫🛢️", texto: "Válvulas y conexiones LIBRES de aceite y grasa" },
+      { icono: "🔥", texto: "Alejado de ropa y materiales combustibles" },
+    ],
     resumen: `
       <h2>Oxígeno Líquido (LOX)</h2>
       <p><strong>Uso:</strong> Líquido oxidante a temperatura criogénica. Usos medicinales e industriales.</p>
@@ -157,6 +180,12 @@ const PRODUCTOS = [
     nombre: "Oxígeno Medicinal",
     pdf: "oxigeno-medicinal.pdf",
     video: "",
+    epp: [
+      { icono: "🚫🛢️", texto: "Válvulas y conexiones LIBRES de aceite y grasa" },
+      { icono: "🔥", texto: "Alejado de ropa y materiales combustibles" },
+      { icono: "🛢️", texto: "Asegurar los cilindros en posición vertical" },
+      { icono: "💨", texto: "Almacenar en lugar ventilado" },
+    ],
     resumen: `
       <h2>Oxígeno Medicinal</h2>
       <p><strong>Uso:</strong> Gas comprimido incoloro e inodoro. Oxigenoterapia, resucitaciones,

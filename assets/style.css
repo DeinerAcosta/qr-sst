@@ -154,6 +154,33 @@ body {
   box-shadow: 0 4px 12px rgba(244, 161, 0, 0.25);
 }
 
+.card-icon.safety {
+  background: linear-gradient(135deg, #E85D00, #FF8C2C);
+  box-shadow: 0 4px 12px rgba(232, 93, 0, 0.30);
+}
+
+/* EPP highlight card (more prominent) */
+.card.epp-highlight {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFFFFF 60%);
+  border: 2px solid #FFB774;
+  position: relative;
+  overflow: hidden;
+}
+
+.card.epp-highlight::before {
+  content: "ACCESO RÁPIDO";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #E85D00;
+  color: white;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 3px 10px;
+  border-radius: 0 0 0 10px;
+}
+
 .card-body { flex: 1; min-width: 0; }
 
 .card-title {
@@ -437,6 +464,94 @@ body {
 .callout.info {
   background: #E8F4FB;
   border-left-color: var(--cofca-secondary);
+}
+
+/* EPP page (Equipos de Protección Personal) */
+.epp-hero {
+  background: linear-gradient(135deg, #E85D00 0%, #F4A100 100%);
+  color: white;
+  padding: 24px 22px 28px;
+  text-align: center;
+}
+
+.epp-hero .epp-product {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity: 0.92;
+  margin-bottom: 8px;
+}
+
+.epp-hero h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.epp-hero .epp-sub {
+  font-size: 13.5px;
+  margin-top: 6px;
+  opacity: 0.95;
+}
+
+.epp-grid {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.epp-item {
+  background: var(--cofca-surface);
+  border: 1px solid var(--cofca-border);
+  border-left: 5px solid #E85D00;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.epp-item-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  background: #FFF1E0;
+  border: 1px solid #FFE0BE;
+}
+
+.epp-item-text {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--cofca-text);
+  line-height: 1.35;
+}
+
+.epp-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--cofca-muted);
+}
+
+.epp-note {
+  max-width: 720px;
+  margin: 12px auto 32px;
+  padding: 14px 18px;
+  background: #FFF6E5;
+  border: 1px dashed #F4A100;
+  border-radius: 10px;
+  color: #6B4400;
+  font-size: 13.5px;
+  text-align: center;
 }
 
 /* Loading hint when PDF embed fails */

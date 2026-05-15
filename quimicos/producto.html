@@ -61,8 +61,18 @@
 
       const tieneVideo   = producto.video && producto.video.trim() !== "";
       const tieneResumen = producto.resumen && producto.resumen.trim() !== "";
+      const tieneEpp     = producto.epp && producto.epp.length > 0;
 
       cards.innerHTML = `
+        <a href="epp.html?id=${encodeURIComponent(producto.id)}" class="card epp-highlight">
+          <span class="card-icon safety">🦺</span>
+          <div class="card-body">
+            <div class="card-title">EPP — Equipo de Protección</div>
+            <div class="card-desc">${tieneEpp ? "Lo que debes usar para manipular este producto" : "En preparación"}</div>
+          </div>
+          <span class="card-arrow">›</span>
+        </a>
+
         <a href="ver-pdf.html?id=${encodeURIComponent(producto.id)}" class="card">
           <span class="card-icon">📄</span>
           <div class="card-body">
