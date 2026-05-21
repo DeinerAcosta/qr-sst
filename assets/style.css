@@ -101,6 +101,11 @@ body {
   96% { transform: rotate(4deg); }
 }
 
+.hero-mascota--sm {
+  width: 84px;
+  margin: 8px auto 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-mascota { animation: none; }
 }
