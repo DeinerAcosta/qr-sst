@@ -84,6 +84,27 @@ body {
   line-height: 1.25;
 }
 
+/* Mascota Iris */
+.hero-mascota {
+  display: block;
+  width: 130px;
+  height: auto;
+  margin: 10px auto 2px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.18));
+  animation: iris-saluda 3s ease-in-out infinite;
+  transform-origin: 75% 80%;
+}
+
+@keyframes iris-saluda {
+  0%, 88%, 100% { transform: rotate(0deg); }
+  92% { transform: rotate(-4deg); }
+  96% { transform: rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mascota { animation: none; }
+}
+
 .subtitle {
   font-size: 14px;
   opacity: 0.9;
