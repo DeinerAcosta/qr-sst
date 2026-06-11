@@ -17,6 +17,7 @@
     <article class="resumen" id="contenido"></article>
   </main>
 
+  <script src="../assets/pictogramas.js"></script>
   <script src="datos.js"></script>
   <script>
     const id = new URLSearchParams(location.search).get("id");
@@ -28,8 +29,10 @@
       document.title = `Resumen · ${producto.nombre} · COFCA`;
       document.getElementById("volver").href = `producto.html?id=${encodeURIComponent(producto.id)}`;
 
+      const pictogramasHtml = renderPictogramas(producto.pictogramas);
+
       if (producto.resumen && producto.resumen.trim() !== "") {
-        contenido.innerHTML = producto.resumen;
+        contenido.innerHTML = pictogramasHtml + producto.resumen;
       } else {
         contenido.innerHTML = `
           <h2>${producto.nombre}</h2>

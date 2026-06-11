@@ -37,6 +37,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "aire-medicinal.pdf",
     video: "",
+    pictogramas: ["GHS04"],
     epp: [
       { icono: "🛢️", texto: "Asegurar los cilindros con cadena o soporte" },
       { icono: "🚫🛢️", texto: "Válvulas y conexiones LIBRES de aceite y grasa" },
@@ -73,6 +74,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "dioxido-de-carbono.pdf",
     video: "",
+    pictogramas: ["GHS04", "GHS07"],
     epp: [
       { icono: "💨", texto: "Usar al aire libre o en lugar bien ventilado" },
       { icono: "🛢️", texto: "Asegurar los cilindros en posición vertical" },
@@ -109,6 +111,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "oxido-nitroso.pdf",
     video: "",
+    pictogramas: ["GHS03", "GHS04", "GHS08"],
     epp: [
       { icono: "🚫🛢️", texto: "Válvulas y conexiones LIBRES de aceite y grasa" },
       { icono: "🔥", texto: "Alejado de la ropa y materiales combustibles" },
@@ -147,6 +150,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "oxigeno-liquido.pdf",
     video: "",
+    pictogramas: ["GHS03", "GHS04"],
     epp: [
       { icono: "❄️", texto: "Guantes aislantes contra el frío" },
       { icono: "👁️", texto: "Protección para la cara o los ojos" },
@@ -185,6 +189,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "oxigeno-medicinal.pdf",
     video: "",
+    pictogramas: ["GHS03", "GHS04"],
     epp: [
       { icono: "🚫🛢️", texto: "Válvulas y conexiones LIBRES de aceite y grasa" },
       { icono: "🔥", texto: "Alejado de ropa y materiales combustibles" },

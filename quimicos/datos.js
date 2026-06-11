@@ -47,6 +47,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "1-thinner.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS07", "GHS08"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa resistentes a solventes" },
       { icono: "👁️", texto: "Gafas de seguridad / protección facial" },
@@ -84,6 +85,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "2-vasrsol.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS07"],
     epp: [
       { icono: "🧤", texto: "Guantes resistentes a solventes" },
       { icono: "👁️", texto: "Gafas de seguridad" },
@@ -122,6 +124,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "3-aerosol.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS04", "GHS08"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -160,6 +163,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "4-esmalte.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS07", "GHS08"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -196,6 +200,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "5-poliuretano.pdf",
     video: "",
+    pictogramas: ["GHS02"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -231,6 +236,7 @@ const PRODUCTOS = [
     severidad: "bajo",
     pdf: "6-aceites-lubricantes.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "⚠️", texto: "Evitar el contacto prolongado con la piel" },
@@ -265,6 +271,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "7-boxer.pdf",
     video: "",
+    pictogramas: ["GHS06", "GHS05", "GHS09"],
     epp: [
       { icono: "🧤", texto: "Guantes y prendas de protección" },
       { icono: "😷", texto: "Mascarilla / máscara de protección — NO respirar" },
@@ -302,6 +309,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "8-pegante-tubos.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS07", "GHS08"],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -338,6 +346,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "9-hipoclorito.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS09"],
     epp: [
       { icono: "🥼", texto: "Traje de hule" },
       { icono: "🥾", texto: "Botas de hule" },
@@ -375,6 +384,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "10-klaxinn.pdf",
     video: "",
+    pictogramas: ["GHS07", "GHS03"],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "👁️", texto: "Gafas o máscara de protección" },
@@ -413,6 +423,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "11-alka-dds.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS07", "GHS09"],
     epp: [
       { icono: "🧤", texto: "Guantes y prendas de protección" },
       { icono: "👁️", texto: "Gafas o máscara de protección" },
@@ -446,6 +457,7 @@ const PRODUCTOS = [
     severidad: "bajo",
     pdf: "12-surfalkan.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "👁️", texto: "Evitar el contacto con los ojos" },
@@ -476,6 +488,7 @@ const PRODUCTOS = [
     severidad: "bajo",
     pdf: "13-pegante-sika.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "👁️", texto: "Gafas de seguridad" },
@@ -511,6 +524,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "14-hs-r410a-es.pdf",
     video: "",
+    pictogramas: ["GHS04"],
     epp: [
       { icono: "❄️", texto: "Guantes aislantes contra el frío" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -549,6 +563,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "15-extintor-dioxido-de-carbono.pdf",
     video: "",
+    pictogramas: ["GHS04"],
     epp: [
       { icono: "✅", texto: "Verificar la presión y el sello antes de usar" },
       { icono: "📏", texto: "Mantenerse a unos 3 metros del fuego" },
@@ -585,6 +600,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "16-acpm.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS07"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Gafas de seguridad" },
@@ -621,6 +637,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "17-masilla-super-mastick.pdf",
     video: "",
+    pictogramas: ["GHS08"],
     epp: [
       { icono: "😷", texto: "Protección respiratoria — NO respirar el polvo" },
       { icono: "🧤", texto: "Guantes de protección" },
@@ -658,6 +675,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "18-limpiador-desincrusante.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes resistentes a químicos" },
       { icono: "👁️", texto: "Gafas y protección facial" },
@@ -688,6 +706,7 @@ const PRODUCTOS = [
     severidad: "bajo",
     pdf: "18-pegante-pvc.pdf",
     video: "",
+    pictogramas: ["GHS07"],
     epp: [
       { icono: "🧤", texto: "Guantes de nitrilo o neopreno" },
       { icono: "👁️", texto: "Gafas protectoras contra salpicaduras" },
@@ -724,6 +743,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "19-evav-clean.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS04", "GHS07"],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "👁️", texto: "Protección para los ojos" },
@@ -761,6 +781,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "20-diablo-rojo.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS07"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -798,6 +819,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "21-quita-oxidos.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS09"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -833,6 +855,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "22-limpiador-desincrusante.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes resistentes a químicos" },
       { icono: "👁️", texto: "Gafas y protección facial" },
@@ -863,6 +886,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "23-alkazyme.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS09"],
     epp: [
       { icono: "🧤", texto: "Guantes y prendas de protección" },
       { icono: "👁️", texto: "Gafas o máscara de protección" },
@@ -897,6 +921,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "24-barniz-acrilico-spray.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS04", "GHS07", "GHS09"],
     epp: [
       { icono: "😷", texto: "No respirar el aerosol" },
       { icono: "🧤", texto: "Guantes de protección" },
@@ -934,6 +959,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "25-pintura-multiproposito.pdf",
     video: "",
+    pictogramas: ["GHS08"],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "😷", texto: "Evitar respirar vapores y nieblas" },
@@ -972,6 +998,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "26-limpiador-electrico.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS04", "GHS07", "GHS08", "GHS09"],
     epp: [
       { icono: "🧤", texto: "Guantes protectores" },
       { icono: "😷", texto: "Evitar respirar los vapores o neblinas" },
@@ -1010,6 +1037,7 @@ const PRODUCTOS = [
     severidad: "bajo",
     pdf: "27-sika-impermeabilizante.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "👁️", texto: "Gafas de seguridad" },
@@ -1045,6 +1073,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "28-butano.pdf",
     video: "",
+    pictogramas: ["GHS02", "GHS04"],
     epp: [
       { icono: "💨", texto: "Usar al aire libre o en lugar bien ventilado" },
       { icono: "🚭", texto: "Alejado de calor, chispas y llamas — no fumar" },
@@ -1079,6 +1108,7 @@ const PRODUCTOS = [
     severidad: "bajo",
     pdf: "29-silicona-pegavidrios.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "💨", texto: "Disponer de ventilación al aplicar" },
@@ -1112,6 +1142,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "30-soda-caustica.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS07"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -1149,6 +1180,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "31-hipoclorito-sodio.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS09"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -1187,6 +1219,7 @@ const PRODUCTOS = [
     severidad: "bajo",
     pdf: "32-jabon-liquido.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "👁️", texto: "Evitar el contacto con ojos y mucosas" },
       { icono: "✅", texto: "Producto de bajo riesgo — uso normal seguro" },
@@ -1218,6 +1251,7 @@ const PRODUCTOS = [
     severidad: "alto",
     pdf: "33-hipoclorito-13.pdf",
     video: "",
+    pictogramas: ["GHS05", "GHS09"],
     epp: [
       { icono: "🧤", texto: "Guantes y ropa de protección" },
       { icono: "👁️", texto: "Protección para los ojos / la cara" },
@@ -1231,6 +1265,7 @@ const PRODUCTOS = [
     severidad: "medio",
     pdf: "34-desinfectante.pdf",
     video: "",
+    pictogramas: [],
     epp: [
       { icono: "🧤", texto: "Guantes de protección" },
       { icono: "👁️", texto: "Protección para los ojos" },

@@ -479,6 +479,46 @@ body {
   border-bottom: 2px solid var(--cofca-border);
 }
 
+/* Pictogramas SGA/GHS */
+.pictogramas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 14px;
+  justify-content: center;
+  margin: 4px 0 22px;
+  padding: 14px 10px;
+  background: #FFF6F6;
+  border: 1px solid #FFD9D9;
+  border-radius: 12px;
+}
+
+.pictograma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 86px;
+  text-align: center;
+}
+
+.pictograma svg {
+  width: 72px;
+  height: 72px;
+  display: block;
+}
+
+.pictograma-label {
+  font-size: 11px;
+  color: #7A1C1C;
+  font-weight: 600;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+@media (max-width: 380px) {
+  .pictograma { width: 76px; }
+  .pictograma svg { width: 64px; height: 64px; }
+}
+
 .resumen h2:first-child { margin-top: 0; }
 
 .resumen p { margin-bottom: 12px; color: var(--cofca-text); }
